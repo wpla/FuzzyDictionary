@@ -105,17 +105,17 @@ concatenations of the lists of their longer counterparts.
 
 This is our first optimization and it looks like this:
 
-   GramHash   GramNodes        Containers
+    GramHash   GramNodes        Containers
 
-   "gamm" --> [#1]             #1: [15, 20]
-   "amma" --> [#2]             #2: [15, 20, 3]
-   "mmas" --> [#3]             #3: [15, 6]
-   "gam"  --> [#1]             #4: [9]
-   "ga"   --> [#1, #4]         #5: [4, 24]
-   "amm"  --> [#2, #5]         #6: [7]
-   "am"   --> [#2, #5]         #7: [23, 8]
-   "mma"  --> [#3, #6]  
-   "mm"   --> [#3, #6, #7]
+    "gamm" --> [#1]             #1: [15, 20]
+    "amma" --> [#2]             #2: [15, 20, 3]
+    "mmas" --> [#3]             #3: [15, 6]
+    "gam"  --> [#1]             #4: [9]
+    "ga"   --> [#1, #4]         #5: [4, 24]
+    "amm"  --> [#2, #5]         #6: [7]
+    "am"   --> [#2, #5]         #7: [23, 8]
+    "mma"  --> [#3, #6]  
+    "mm"   --> [#3, #6, #7]
 
 We can do another optimization suggested by [1].  If we split our
 pattern into k pieces, each maxGramSize long, but our text T is
@@ -124,17 +124,17 @@ with length(T) - k maxGramSize degrees of freedom.  We should
 choose the splits to minimize the amount of words we have to check
 later.
 
-   GramHash   GramNodes        Containers
+    GramHash   GramNodes        Containers
 
-   "gamm" --> 2, [#1]          #1: [15, 20]
-   "amma" --> 3, [#2]          #2: [15, 20, 3]
-   "mmas" --> 2, [#3]          #3: [15, 6]
-   "gam"  --> 2, [#1]          #4: [9]
-   "ga"   --> 3, [#1, #4]      #5: [4, 24]
-   "amm"  --> 5, [#2, #5]      #6: [7]
-   "am"   --> 5, [#2, #5]      #7: [23, 8]
-   "mma"  --> 4, [#3, #6]  
-   "mm"   --> 5, [#3, #6, #7]
+    "gamm" --> 2, [#1]          #1: [15, 20]
+    "amma" --> 3, [#2]          #2: [15, 20, 3]
+    "mmas" --> 2, [#3]          #3: [15, 6]
+    "gam"  --> 2, [#1]          #4: [9]
+    "ga"   --> 3, [#1, #4]      #5: [4, 24]
+    "amm"  --> 5, [#2, #5]      #6: [7]
+    "am"   --> 5, [#2, #5]      #7: [23, 8]
+    "mma"  --> 4, [#3, #6]  
+    "mm"   --> 5, [#3, #6, #7]
 
 This what our data structure looks like in general:
 
@@ -149,7 +149,7 @@ points to.
 After finding all entries we apply an optimized version of
 Ukkonen's distance as described in [2] to find the best match.
 
-IV) References
+## References
 
 [1] G. Navarro, R. Baeza-Yates: A Practical q-Gram Index for
     Text Retrieval Allowing Errors. 
