@@ -151,8 +151,8 @@ Ukkonen's distance as described in [2] to find the best match.
 
 ## References
 
-[1] G. Navarro, R. Baeza-Yates: A Practical q-Gram Index for
-    Text Retrieval Allowing Errors. 
-[2] E. Ukkonen (1985): Finding Approximate Patterns in Strings.
-    Journal of Algorithms 6, 132--137.
+1) G. Navarro, R. Baeza-Yates: A Practical q-Gram Index for
+   Text Retrieval Allowing Errors. 
+2) E. Ukkonen (1985): Finding Approximate Patterns in Strings.
+   Journal of Algorithms 6, 132--137.
 
